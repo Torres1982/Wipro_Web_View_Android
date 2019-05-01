@@ -20,60 +20,61 @@ function validateFields() {
   	} else {
 		confirm("Are you sure you want to submit your data?");
 
-	    displayJsonArray(first_name, surname, email, gender_selected, dob);
-	    saveDataToLocalStorage(first_name, surname, email, gender_selected, dob);
+	    //displayJsonArray(first_name, surname, email, gender_selected, dob);
+	    //saveDataToLocalStorage(first_name, surname, email, gender_selected, dob);
 	}
+	Android.validate(first_name);
 }
 
 // This function returns a String of the user details
-function displayJsonArray (first_name, surname, email, gender, dob) {
-    var user_details = '{"new_user":[{"first_name": ' + first_name + ', "last_name": ' + surname + ', "email": ' + email + ', "gender": ' + gender +', "date_of_birth": ' + dob + '}]}';
-    console.log(user_details);
-}
+//function displayJsonArray (first_name, surname, email, gender, dob) {
+//    var user_details = '{"new_user":[{"first_name": ' + first_name + ', "last_name": ' + surname + ', "email": ' + email + ', "gender": ' + gender +', "date_of_birth": ' + dob + '}]}';
+//    console.log(user_details);
+//}
 
 // Saves the registered user in the local storage
-function saveDataToLocalStorage(first_name, last_name, email, gender, dob) {
-    addUserDataToLocalDatabase("first_name", first_name);
-    addUserDataToLocalDatabase("last_name", last_name);
-    addUserDataToLocalDatabase("email", email);
-    addUserDataToLocalDatabase("gender", gender);
-    addUserDataToLocalDatabase("date_of_birth", dob);
-}
+//function saveDataToLocalStorage(first_name, last_name, email, gender, dob) {
+//    addUserDataToLocalDatabase("first_name", first_name);
+//    addUserDataToLocalDatabase("last_name", last_name);
+//    addUserDataToLocalDatabase("email", email);
+//    addUserDataToLocalDatabase("gender", gender);
+//    addUserDataToLocalDatabase("date_of_birth", dob);
+//}
 
-function addUserDataToLocalDatabase(key, value) {
-	localStorage.setItem(key, value);
-}
+//function addUserDataToLocalDatabase(key, value) {
+//	localStorage.setItem(key, value);
+//}
 
 // Retrieves the registered user from the local storage
-$('.nav_users').click(function() {
-    retrieveDataFromLocalStorage();
-});
+//$('.nav_users').click(function() {
+//    retrieveDataFromLocalStorage();
+//});
 
-function retrieveDataFromLocalStorage() {
-    var first_name = localStorage.getItem("first_name");
-    var surname = localStorage.getItem("last_name");
-    var email = localStorage.getItem("email");
-    var gender = localStorage.getItem("gender");
-    var dob = localStorage.getItem("date_of_birth");
-    var user_array = [first_name, surname, email, gender, dob];
-
-    populateInputFields(user_array);
-}
+//function retrieveDataFromLocalStorage() {
+//    var first_name = localStorage.getItem("first_name");
+//    var surname = localStorage.getItem("last_name");
+//    var email = localStorage.getItem("email");
+//    var gender = localStorage.getItem("gender");
+//    var dob = localStorage.getItem("date_of_birth");
+//    var user_array = [first_name, surname, email, gender, dob];
+//
+//    populateInputFields(user_array);
+//}
 
 // Populate the input fields with data from the local storage
-function populateInputFields(user_array) {
-    $("#first-name").val(user_array[0]);
-    $("#surname").val(user_array[1]);
-    $("#email").val(user_array[2]);
-    $("#date-of-birth").val(user_array[4]);
-	var gender = user_array[3] === "female" ? "female" : "male";
+//function populateInputFields(user_array) {
+//    $("#first-name").val(user_array[0]);
+//    $("#surname").val(user_array[1]);
+//    $("#email").val(user_array[2]);
+//    $("#date-of-birth").val(user_array[4]);
+//	var gender = user_array[3] === "female" ? "female" : "male";
+//
+//	checkGenderCheckBox(gender);
+//}
 
-	checkGenderCheckBox(gender);
-}
-
-function checkGenderCheckBox(gender) {
-	$('#'+gender).prop("checked", true);
-}
+//function checkGenderCheckBox(gender) {
+//	$('#'+gender).prop("checked", true);
+//}
 
 // Simple email validation
 function validateEmail(email) {

@@ -34,6 +34,7 @@ h3 {
 .section-items p {
 	color: white;
 	text-align: justify;
+	margin-bottom: 20px;
 }
 
 .section-features p {
