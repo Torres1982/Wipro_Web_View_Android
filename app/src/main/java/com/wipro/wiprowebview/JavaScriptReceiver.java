@@ -3,6 +3,7 @@ package com.wipro.wiprowebview;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
 
@@ -34,7 +35,8 @@ public class JavaScriptReceiver {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(context, "Data has been submitted successfully! " + which, Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
+                Intent refreshActivity = new Intent(context, MainActivity.class);
+                context.startActivity(refreshActivity);
             }
         });
 
@@ -42,7 +44,6 @@ public class JavaScriptReceiver {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(context, "Data submission has been cancelled! " + which, Toast.LENGTH_SHORT).show();
-                dialog.cancel();
             }
         });
 
