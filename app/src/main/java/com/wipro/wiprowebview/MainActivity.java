@@ -20,8 +20,9 @@ public class MainActivity extends AppCompatActivity {
         webView = findViewById(R.id.web_view);
 
         WebSettings webSettings = webView.getSettings();
-        webSettings.setBuiltInZoomControls(true);
+        webSettings.setBuiltInZoomControls(false);
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setAllowFileAccess(true);
 
         // Binding JavaScriptReceiver class to JS running in the WebView
         webView.addJavascriptInterface(new JavaScriptReceiver(this), "Android");
