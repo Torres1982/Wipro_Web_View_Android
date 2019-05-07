@@ -5,8 +5,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.widget.Toast;
-import com.wipro.wiprowebview.MainActivity;
 import com.wipro.wiprowebview.R;
+import com.wipro.wiprowebview.SecondActivity;
 
 public class DialogBoxUtility {
     private Context context;
@@ -25,8 +25,9 @@ public class DialogBoxUtility {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(context, "Data has been submitted successfully! " + which, Toast.LENGTH_SHORT).show();
-                Intent refreshActivity = new Intent(context, MainActivity.class);
-                context.startActivity(refreshActivity);
+                Intent secondActivity = new Intent(context, SecondActivity.class);
+                context.startActivity(secondActivity);
+                
             }
         });
 

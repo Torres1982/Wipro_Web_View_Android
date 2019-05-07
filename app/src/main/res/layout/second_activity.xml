@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SecondActivity"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/text_view_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightGreen"
+        android:padding="@dimen/padding_ten"
+        android:layout_marginTop="@dimen/margin_thirty"
+        android:layout_marginStart="@dimen/margin_thirty"
+        android:layout_marginEnd="@dimen/margin_thirty" />
+    <TextView
+        android:id="@+id/text_view_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightGreen"
+        android:padding="@dimen/padding_ten"
+        android:layout_marginTop="@dimen/margin_thirty"
+        android:layout_marginStart="@dimen/margin_thirty"
+        android:layout_marginEnd="@dimen/margin_thirty" />
+    <TextView
+        android:id="@+id/text_view_dob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightGreen"
+        android:padding="@dimen/padding_ten"
+        android:layout_marginTop="@dimen/margin_thirty"
+        android:layout_marginStart="@dimen/margin_thirty"
+        android:layout_marginEnd="@dimen/margin_thirty" />
+    <TextView
+        android:id="@+id/text_view_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightGreen"
+        android:padding="@dimen/padding_ten"
+        android:layout_marginTop="@dimen/margin_thirty"
+        android:layout_marginStart="@dimen/margin_thirty"
+        android:layout_marginEnd="@dimen/margin_thirty" />
+</LinearLayout>
