@@ -25,12 +25,14 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setAllowFileAccess(true);
 
         // Binding JavaScriptReceiver class to JS running in the WebView
+        // This creates an Android interface that is accessible by the Web App
         webView.addJavascriptInterface(new JavaScriptReceiver(this, this), "Android");
 
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("file:///android_asset/index.html");
     }
 
+    // This may be used if the user wants more control over where the clicked links load
     private class WebViewClient extends android.webkit.WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
