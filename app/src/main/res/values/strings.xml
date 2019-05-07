@@ -3,4 +3,8 @@
     <string name="dialog_box_positive_button">Confirm</string>
     <string name="dialog_box_negative_button">Cancel</string>
     <string name="confirmation_dialog_title">Confirmation</string>
+    <string name="full_name">Full Name:</string>
+    <string name="email">Email:</string>
+    <string name="birth_date">Date of Birth:</string>
+    <string name="gender">Gender:</string>
 </resources>

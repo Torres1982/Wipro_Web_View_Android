@@ -11,11 +11,11 @@ import com.wipro.wiprowebview.SecondActivity;
 
 public class DialogBoxUtility {
     private Context context;
-    private Activity activity;
+    private Activity currentActivity;
 
-    public DialogBoxUtility(Context newContext, Activity newActivity) {
+    public DialogBoxUtility(Context newContext, Activity activity) {
         context = newContext;
-        activity = newActivity;
+        currentActivity = activity;
     }
 
     // Create a Confirmation Alert Dialog
@@ -35,7 +35,7 @@ public class DialogBoxUtility {
                 secondActivity.putExtra("birth_date", dob);
                 secondActivity.putExtra("gender", gender);
                 context.startActivity(secondActivity);
-                activity.finish();
+                currentActivity.finish();
             }
         });
 

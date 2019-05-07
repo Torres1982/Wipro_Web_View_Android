@@ -9,11 +9,11 @@ import com.wipro.wiprowebview.util.DialogBoxUtility;
 
 public class JavaScriptReceiver {
     private Context context;
-    private Activity activity;
+    private Activity currentActivity;
 
-    JavaScriptReceiver(Context newContext, Activity newActivity) {
+    JavaScriptReceiver(Context newContext, Activity activity) {
         context = newContext;
-        activity = newActivity;
+        currentActivity = activity;
     }
 
     @JavascriptInterface
@@ -23,7 +23,7 @@ public class JavaScriptReceiver {
 
     @JavascriptInterface
     public void confirmSubmission(String message, String name, String surname, String email, String dob, String gender) {
-        DialogBoxUtility dialogBox = new DialogBoxUtility(context, activity);
+        DialogBoxUtility dialogBox = new DialogBoxUtility(context, currentActivity);
         dialogBox.showConfirmationDialog(message, name, surname, email, dob, gender);
     }
 }

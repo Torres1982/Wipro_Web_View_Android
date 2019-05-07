@@ -6,39 +6,71 @@
     tools:context=".SecondActivity"
     android:orientation="vertical">
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/full_name"
+        android:textSize="@dimen/text_size_sixteen"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/ten"
+        android:layout_marginStart="@dimen/margin_thirty" />
+    <TextView
         android:id="@+id/text_view_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/lightGreen"
-        android:padding="@dimen/padding_ten"
-        android:layout_marginTop="@dimen/margin_thirty"
+        android:padding="@dimen/ten"
+        android:layout_marginTop="@dimen/ten"
         android:layout_marginStart="@dimen/margin_thirty"
         android:layout_marginEnd="@dimen/margin_thirty" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:textSize="@dimen/text_size_sixteen"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/ten"
+        android:layout_marginStart="@dimen/margin_thirty" />
     <TextView
         android:id="@+id/text_view_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/lightGreen"
-        android:padding="@dimen/padding_ten"
-        android:layout_marginTop="@dimen/margin_thirty"
+        android:padding="@dimen/ten"
+        android:layout_marginTop="@dimen/ten"
         android:layout_marginStart="@dimen/margin_thirty"
         android:layout_marginEnd="@dimen/margin_thirty" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/birth_date"
+        android:textSize="@dimen/text_size_sixteen"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/ten"
+        android:layout_marginStart="@dimen/margin_thirty" />
     <TextView
         android:id="@+id/text_view_dob"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/lightGreen"
-        android:padding="@dimen/padding_ten"
-        android:layout_marginTop="@dimen/margin_thirty"
+        android:padding="@dimen/ten"
+        android:layout_marginTop="@dimen/ten"
         android:layout_marginStart="@dimen/margin_thirty"
         android:layout_marginEnd="@dimen/margin_thirty" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gender"
+        android:textSize="@dimen/text_size_sixteen"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/ten"
+        android:layout_marginStart="@dimen/margin_thirty" />
     <TextView
         android:id="@+id/text_view_gender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/lightGreen"
-        android:padding="@dimen/padding_ten"
-        android:layout_marginTop="@dimen/margin_thirty"
+        android:padding="@dimen/ten"
+        android:layout_marginTop="@dimen/ten"
         android:layout_marginStart="@dimen/margin_thirty"
         android:layout_marginEnd="@dimen/margin_thirty" />
 </LinearLayout>
