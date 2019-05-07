@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setAllowFileAccess(true);
 
         // Binding JavaScriptReceiver class to JS running in the WebView
-        webView.addJavascriptInterface(new JavaScriptReceiver(this), "Android");
+        webView.addJavascriptInterface(new JavaScriptReceiver(this, this), "Android");
 
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("file:///android_asset/index.html");

@@ -1,5 +1,6 @@
 package com.wipro.wiprowebview.util;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -10,9 +11,11 @@ import com.wipro.wiprowebview.SecondActivity;
 
 public class DialogBoxUtility {
     private Context context;
+    private Activity activity;
 
-    public DialogBoxUtility(Context newContext) {
+    public DialogBoxUtility(Context newContext, Activity newActivity) {
         context = newContext;
+        activity = newActivity;
     }
 
     // Create a Confirmation Alert Dialog
@@ -27,7 +30,7 @@ public class DialogBoxUtility {
                 Toast.makeText(context, "Data has been submitted successfully! " + which, Toast.LENGTH_SHORT).show();
                 Intent secondActivity = new Intent(context, SecondActivity.class);
                 context.startActivity(secondActivity);
-                
+                activity.finish();
             }
         });
 
