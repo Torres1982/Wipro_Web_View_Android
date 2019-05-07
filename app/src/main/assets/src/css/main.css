@@ -196,3 +196,23 @@ h3 {
 .footer-social-media img:hover {
 	opacity: 1;
 }
+
+/* ------------------------------------------------ */
+/*		               Second Web View			    */
+/* ------------------------------------------------ */
+.wrapper {
+    margin: 20px 0 0 12px;
+}
+
+.top-margin {
+    margin-top: 40px;
+}
+
+#gender-second,
+#date-of-birth-second {
+	height: 25px;
+}
+
+#date-of-birth-second {
+	width: 185px;
+}

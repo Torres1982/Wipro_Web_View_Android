@@ -1,24 +1,31 @@
 package com.wipro.wiprowebview;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.TextView;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class SecondActivity extends AppCompatActivity {
-    TextView textViewName;
-    TextView textViewEmail;
-    TextView textViewDob;
-    TextView textViewGender;
+    WebView webView;
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_activity);
 
-        textViewName = findViewById(R.id.text_view_name);
-        textViewEmail =  findViewById(R.id.text_view_email);
-        textViewDob = findViewById(R.id.text_view_dob);
-        textViewGender = findViewById(R.id.text_view_gender);
+        webView = findViewById(R.id.web_view_second);
+
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        // Binding JavaScriptReceiver class to JS running in the Second WebView
+        // This creates a "Web" interface that is accessible by the Web App
+        webView.addJavascriptInterface(new JavaScriptReceiver(this, this), "Web");
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("file:///android_asset/second_web_view.html");
 
         Bundle bundle = getIntent().getExtras();
 
@@ -36,9 +43,6 @@ public class SecondActivity extends AppCompatActivity {
 
     // Fill the Text View with passed values from WebView
     private void setTextViewValues(String fullName, String email, String dob, String gender) {
-        textViewName.setText(fullName);
-        textViewEmail.setText(email);
-        textViewDob.setText(dob);
-        textViewGender.setText(gender);
+
     }
 }
