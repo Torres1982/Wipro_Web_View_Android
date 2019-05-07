@@ -13,4 +13,5 @@ Wrap the registration html page created in first assignment in a native Android 
 On click of "Submit" button on the html page, pass the callback from JavaScript to Android Activity.
 
 ### Feature Work:
-1. Store the retrieved values to a local Database.
+1. Kill the current Activity when starting a new Activity. UPDATED
+1. When clicking the Registration button, start the new Activity and display passed values. UPDATED
