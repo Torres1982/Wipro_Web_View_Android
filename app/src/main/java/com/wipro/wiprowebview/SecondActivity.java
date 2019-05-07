@@ -9,6 +9,7 @@ import android.webkit.WebViewClient;
 
 public class SecondActivity extends AppCompatActivity {
     WebView webView;
+    String firstName, lastName, email, dob, gender, fullName;
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
@@ -20,29 +21,30 @@ public class SecondActivity extends AppCompatActivity {
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setBuiltInZoomControls(true);
 
-        // Binding JavaScriptReceiver class to JS running in the Second WebView
-        // This creates a "Web" interface that is accessible by the Web App
-        webView.addJavascriptInterface(new JavaScriptReceiver(this, this), "Web");
-        webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("file:///android_asset/second_web_view.html");
-
+        // Retrieve String values passed through the Intent
         Bundle bundle = getIntent().getExtras();
 
         if (bundle != null) {
-            String firstName = bundle.getString("name");
-            String lastName = bundle.getString("surname");
-            String email = bundle.getString("email");
-            String dob = bundle.getString("birth_date");
-            String gender =  bundle.getString("gender");
-            String fullName = firstName + " " + lastName;
-
-            setTextViewValues(fullName, email, dob, gender);
+            firstName = bundle.getString("name");
+            lastName = bundle.getString("surname");
+            email = bundle.getString("email");
+            dob = bundle.getString("birth_date");
+            gender =  bundle.getString("gender");
         }
-    }
+        fullName = firstName + " " + lastName;
 
-    // Fill the Text View with passed values from WebView
-    private void setTextViewValues(String fullName, String email, String dob, String gender) {
+        webView.loadUrl("file:///android_asset/second_web_view.html");
 
+        webView.setWebViewClient(new WebViewClient() {
+            // Load javascript functions once that HTML page has been loaded
+            public void onPageFinished(WebView view, String url){
+                webView.loadUrl("javascript:prepopulateSecondWebViewName('" + fullName + "')");
+                webView.loadUrl("javascript:prepopulateSecondWebViewEmail('" + email + "')");
+                webView.loadUrl("javascript:prepopulateSecondWebViewBirthDate('" + dob + "')");
+                webView.loadUrl("javascript:prepopulateSecondWebViewGender('" + gender + "')");
+            }
+        });
     }
 }

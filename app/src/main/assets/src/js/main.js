@@ -29,6 +29,20 @@ function validateEmail(email) {
 	return email.match(email_regex);
 }
 
+// Prepopulate input text fields with values passed from the Android
+function prepopulateSecondWebViewName(name) {
+    document.getElementById("full-name_second").value = name;
+}
+function prepopulateSecondWebViewEmail(email) {
+    document.getElementById("email_second").value = email;
+}
+function prepopulateSecondWebViewBirthDate(dob) {
+    document.getElementById("date-of-birth-second").value = dob;
+}
+function prepopulateSecondWebViewGender(gender) {
+        document.getElementById("gender-second").value = gender;
+}
+
 // Toggle for the mobile menu button
 $('.mobile-menu-icon').click(function() {
 	var navigation = $('.main-nav');

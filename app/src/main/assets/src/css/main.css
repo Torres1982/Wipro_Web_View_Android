@@ -145,10 +145,6 @@ h3 {
 	display: none;
 }
 
-#nav-buttons a {
-	//background-color: white;
-}
-
 /* ------------------------------------------------ */
 /*		            Footer			                */
 /* ------------------------------------------------ */
@@ -157,7 +153,6 @@ h3 {
 	margin-left:-5px;
 	margin-top: 350px;
 	padding: 20px 0 20px 0;
-	width: 100%;
 }
 
 .footer ul li a, .footer-social-media, .footer-copyright {
@@ -182,15 +177,15 @@ h3 {
 }
 
 .footer-navigation {
-  margin-top: 14px;
+    margin-top: 14px;
 	list-style: none;
 }
 
 .footer-social-media img {
 	margin-bottom: -12px;
 	opacity: 0.7;
-  width: 40px;
-  height: 40px;
+    width: 40px;
+    height: 40px;
 }
 
 .footer-social-media img:hover {
@@ -208,6 +203,8 @@ h3 {
     margin-top: 40px;
 }
 
+#full-name-second,
+#email-second,
 #gender-second,
 #date-of-birth-second {
 	height: 25px;

@@ -22,12 +22,12 @@ public class DialogBoxUtility {
     public void showConfirmationDialog(String message, final String name, final String surname, final String email, final String dob, final String gender) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(R.string.confirmation_dialog_title);
-        builder.setMessage(message + "\nName:\t\t\t" + name + " " + surname + "\nEmail:\t\t\t\t" + email + "\nDOB:\t\t\t\t\t" + dob + "\nGender:\t\t" + gender);
+        builder.setMessage(message + "\nName:\t\t\t\t" + name + " " + surname + "\nEmail:\t\t\t\t" + email + "\nDOB:\t\t\t\t\t" + dob + "\nGender:\t\t" + gender);
 
         builder.setPositiveButton(R.string.dialog_box_positive_button, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(context, "Data has been submitted successfully! " + which, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Data has been SUBMITTED successfully! ", Toast.LENGTH_SHORT).show();
                 Intent secondActivity = new Intent(context, SecondActivity.class);
                 secondActivity.putExtra("name", name);
                 secondActivity.putExtra("surname", surname);
@@ -42,7 +42,7 @@ public class DialogBoxUtility {
         builder.setNegativeButton(R.string.dialog_box_negative_button, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(context, "Data submission has been cancelled! " + which, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Data submission has been CANCELLED!", Toast.LENGTH_SHORT).show();
             }
         });
 
