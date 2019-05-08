@@ -14,4 +14,4 @@ On click of "Submit" button on the html page, pass the callback from JavaScript 
 
 ### Feature Work:
 1. Kill the current Activity when starting a new Activity. UPDATED
-1. When clicking the Registration button, start the new Activity and display passed values. UPDATED
+1. When clicking the Registration button, start the new Activity with loaded WebView and pre-populate the input text fields with passed values from Android. UPDATED
