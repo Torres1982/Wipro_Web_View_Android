@@ -28,13 +28,7 @@ public class DialogBoxUtility {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(context, "Data has been SUBMITTED successfully! ", Toast.LENGTH_SHORT).show();
-                Intent secondActivity = new Intent(context, SecondActivity.class);
-                secondActivity.putExtra("name", name);
-                secondActivity.putExtra("surname", surname);
-                secondActivity.putExtra("email", email);
-                secondActivity.putExtra("birth_date", dob);
-                secondActivity.putExtra("gender", gender);
-                context.startActivity(secondActivity);
+                sendIntentToSecondActivity(name, surname, email, dob, gender);
                 currentActivity.finish();
             }
         });
@@ -48,5 +42,16 @@ public class DialogBoxUtility {
 
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    // Send an Intent to the Second Activity with Bundle
+    private void sendIntentToSecondActivity(String name, String surname, String email, String dob, String gender) {
+        Intent secondActivity = new Intent(context, SecondActivity.class);
+        secondActivity.putExtra("name", name);
+        secondActivity.putExtra("surname", surname);
+        secondActivity.putExtra("email", email);
+        secondActivity.putExtra("birth_date", dob);
+        secondActivity.putExtra("gender", gender);
+        context.startActivity(secondActivity);
     }
 }

@@ -4,11 +4,13 @@ import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebResourceRequest;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.wipro.wiprowebview.util.WebViewUtility;
+
 public class MainActivity extends AppCompatActivity {
+    private static final String FILE_URL = "file:///android_asset/index.html";
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
@@ -17,16 +19,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         WebView webView = findViewById(R.id.web_view);
-
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setBuiltInZoomControls(true);
+        WebViewUtility.setWebViewSettings(webView);
 
         // Binding JavaScriptReceiver class to JS running in the WebView
         // This creates an "Android" interface that is accessible by the Web App
         webView.addJavascriptInterface(new JavaScriptReceiver(this, this), "Android");
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("file:///android_asset/index.html");
+        webView.loadUrl(FILE_URL);
     }
 
     // This may be used if the user wants more control over where the clicked links load
