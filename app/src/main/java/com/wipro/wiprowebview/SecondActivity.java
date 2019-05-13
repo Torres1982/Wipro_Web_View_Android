@@ -8,8 +8,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 public class SecondActivity extends AppCompatActivity {
-    WebView webView;
-    String firstName, lastName, email, dob, gender, fullName;
+    private WebView webView;
+    private String firstName, lastName, email, dob, gender, fullName;
+    private static final String BASE_URL = "file:///android_asset/second_web_view.html";
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
@@ -35,7 +36,7 @@ public class SecondActivity extends AppCompatActivity {
         }
         fullName = firstName + " " + lastName;
 
-        webView.loadUrl("file:///android_asset/second_web_view.html");
+        webView.loadUrl(BASE_URL);
 
         webView.setWebViewClient(new WebViewClient() {
             // Load javascript functions once that HTML page has been loaded
