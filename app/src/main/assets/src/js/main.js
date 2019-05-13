@@ -30,6 +30,14 @@ function validateEmail(email) {
 }
 
 // Prepopulate input text fields with values passed from the Android
+//function prepopulateSecondWebView(name, email, dob, gender) {
+//    document.getElementById("full-name_second").value = name;
+//    document.getElementById("email_second").value = email;
+//    document.getElementById("date-of-birth-second").value = dob;
+//    document.getElementById("gender-second").value = gender;
+//}
+
+ Prepopulate input text fields with values passed from the Android
 function prepopulateSecondWebViewName(name) {
     document.getElementById("full-name_second").value = name;
 }

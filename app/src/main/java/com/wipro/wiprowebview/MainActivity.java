@@ -9,7 +9,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity {
-    WebView webView;
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
@@ -17,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        webView = findViewById(R.id.web_view);
+        WebView webView = findViewById(R.id.web_view);
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
