@@ -1,8 +1,10 @@
 package com.wipro.wiprowebview;
 
 import android.annotation.SuppressLint;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.webkit.ValueCallback;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -39,11 +41,18 @@ public class SecondActivity extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient() {
             // Load javascript functions once that HTML page has been loaded
             public void onPageFinished(WebView view, String url) {
-                //webView.loadUrl("javascript:window.setResult(prepopulateSecondWebView(" + fullName + ", " + email + ", " + dob + ", " + gender + "))");
+                //webView.loadUrl("javascript:window.Android.setResult(prepopulateSecondWebView(" + fullName + ", " + email + ", " + dob + ", " + gender + "))");
                 webView.loadUrl("javascript:prepopulateSecondWebViewName('" + fullName + "')");
                 webView.loadUrl("javascript:prepopulateSecondWebViewEmail('" + email + "')");
                 webView.loadUrl("javascript:prepopulateSecondWebViewBirthDate('" + dob + "')");
                 webView.loadUrl("javascript:prepopulateSecondWebViewGender('" + gender + "')");
+
+//                webView.evaluateJavascript("callMe(\" + fullName + \", \" + email + \", \" + dob + \", \" + gender + \");", new ValueCallback< String >() {
+//                    @Override
+//                    public void onReceiveValue(String value) {
+//                        webView.loadUrl("javascript:callMe('" + fullName + ", " + email + ", " + dob + ", " + gender + "')");
+//                    }
+//                });
             }
         });
     }
